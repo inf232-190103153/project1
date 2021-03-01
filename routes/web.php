@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
-use app\Models\Post;
+use app\Models\Posts;
 
 
 /*
@@ -21,14 +21,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('post/add', function () {
-    DB::table('post')->insert([
-        'title' => 'Kuka',
-        'body' => 'djkfsjk' 
+
+
+Route::get('posts/add', function(){
+    DB::table('posts')->insert([
+        'title' => 'My title',
+        'body' => 'My body'
     ]);
 });
 
-Route::get('post', function(){
-    $post = Post::find(2);
+Route::get('posts', function(){
+    $post = Posts::find(1);
     return $post->title;
-});
+}); 
