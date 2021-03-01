@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
-use app\Models\Posts;
+use App\Models\Posts;
 
 
 /*
@@ -31,6 +31,6 @@ Route::get('posts/add', function(){
 });
 
 Route::get('posts', function(){
-    $post = Posts::find(1);
-    return $post->title;
+    $posts = Posts::find(1);
+    return $posts->title;
 }); 
