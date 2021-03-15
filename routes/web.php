@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Posts;
-
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +30,4 @@ Route::get('posts/add', function(){
     ]);
 });
 
-Route::get('posts', function(){
-    $posts = Posts::find(1);
-    return $posts->title;
-}); 
+Route::get('posts',[PostsController::class, 'index']);
