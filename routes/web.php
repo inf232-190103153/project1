@@ -35,3 +35,10 @@ Route::get('posts/create', function(){
     return view('posts.create');
 });
 Route::post('posts/create',[PostsController::class, 'store'])->name('add-posts');
+
+
+Route::get('/user', 'App\Http\Controllers\UserController@mail_send');
+
+Route::post('/addphoto', 'App\Http\Controllers\UserController@store')->name('addphoto');
+
+Route::get('meil/send', 'App\Http\Controllers\MailController@send');
